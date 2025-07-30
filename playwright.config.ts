@@ -39,6 +39,11 @@ export default defineConfig({
     screenshot: "on-first-failure",
     video: "retain-on-failure",
     trace: "retain-on-failure",
+  
+  },
+  timeout: 120000,
+  expect:{
+    timeout: 60000
   },
 
   /* Configure projects for major browsers */
@@ -51,8 +56,7 @@ export default defineConfig({
       name: "chromium",
       dependencies: ["Setup"],
       use: {
-        ...devices["Desktop Chrome"],
-        // storageState : './playwright/.auth/admin_1.json'
+        ...devices["Desktop Chrome"]
       },
     },
 
@@ -60,8 +64,7 @@ export default defineConfig({
       name: "firefox",
       dependencies: ["Setup"],
       use: {
-        ...devices["Desktop Firefox"],
-        storageState: "./playwright/.auth/auth.json",
+        ...devices["Desktop Firefox"]
       },
     },
 
@@ -69,8 +72,7 @@ export default defineConfig({
       name: "webkit",
       dependencies: ["Setup"],
       use: {
-        ...devices["Desktop Safari"],
-        storageState: "./playwright/.auth/auth.json",
+        ...devices["Desktop Safari"]
       },
     },
 

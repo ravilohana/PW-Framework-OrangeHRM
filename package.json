@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test:live_all_browser": "cross-env ENV_NAME=live SECRET_KEY=pworangehrm57  npx playwright test --headed",
-    "test:local_all_browser": "cross-env ENV_NAME=local SECRET_KEY=pworangehrm57  npx playwright test --headed",
+    "test:local_all_browser": "cross-env ENV_NAME=local SECRET_KEY=pworangehrm57  npx playwright test --reporter=html --headed",
     "test:live": "cross-env ENV_NAME=live SECRET_KEY=pworangehrm57  npx playwright test --project=chromium --headed",
     "test:local": "cross-env ENV_NAME=local SECRET_KEY=pworangehrm57  npx playwright test --project=chromium --headed",
     "test:live:chrome": "cross-env ENV_NAME=live SECRET_KEY=pworangehrm57 npx playwright test ${file-name} --project=chromium --headed",
